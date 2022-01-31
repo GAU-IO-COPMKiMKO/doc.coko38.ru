@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+{% if info is not null %}
+<center><p class="text-start">{{ info }}</p></center>
+{% endif %}
+<center><p class="text-start">Главная страница</p><br>
+    <img src="{% static 'main/billy.jpg' %}" />
+    <img src="{% static 'main/prog.jpg' %}" />
+    <img src="{% static 'main/billy_invert.jpg' %}" />
+</center>
+{% endblock body %}

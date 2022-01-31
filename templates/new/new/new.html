@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="form">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <center>
+        <table>
+            <tr>
+                <td align="center">Описание документа<br>(как будет в банке документов)</td>
+                <td width="700px" align="center"><input type="text" name="name" required></td>
+            </tr>
+            <tr><td align="center">Направление:</td>
+				<td width="700px" align="center"><center>
+					<select class="inp-select" name="division" required>
+						{% for el in divisions %}
+							<option>{{ el.division }}</option>
+						{% endfor %}
+					</select>
+                </center></td>
+            </tr>
+            <tr><td align="center">Уровень принятия:</td>
+                <td width="700px" align="center"><center>
+					<select class="inp-select" name="level" required>
+						{% for el in levels %}
+							<option>{{ el.level }}</option>
+						{% endfor %}
+					</select>
+                </center></td>
+            </tr>
+            <tr>
+                <td align="center">Выберите файл:</td>
+                <td width="700px" align="center">
+                    <input type="file" name="file" required>
+                </td>
+            </tr>
+        </table>
+        <br><button type="submit">Добавить документ в банк</button>
+    </center>
+    </form>
+    </div>
+{% endblock body %}

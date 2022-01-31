@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Электронный мониторинг деятельности специалистов, осуществляющих процедуру всестороннего
+        анализа профессиональной деятельности педагогических работников</title>
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+    <style>
+    a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      outline: none;
+      font-family: Circe;
+      transition: .3s linear;
+    }
+    select {
+      align: center;
+      width: 94%;
+      padding:10px;
+      border-radius:10px;
+      font-family: Circe;
+      font-size: 14pt;
+    }
+    table {
+      font-family: Circe;
+      font-size: 14pt;
+    }
+    form {
+      font-family: Circe;
+      font-size: 14pt;
+    }
+    input {
+      width: 90%;
+      padding:10px;
+      border-radius:10px;
+      font-family: Circe;
+      font-size: 14pt;
+    }
+    button {
+      padding:10px;
+      border-radius:10px;
+      background-color:#f15b4e;
+      color:#ffffff;
+      font-family: Circe;
+      font-size: 18pt;
+    }
+    .main-title {
+      display: block;
+      color: #ebebec;
+      background-color: #373c59;
+      text-align: center;
+      margin: 0 auto;
+      width: 90%;
+      font-weight: bold;
+      font-family: Circe;
+      font-size: 24pt;
+      border-radius: 10px;
+    }
+    @font-face {
+        font-family: Circe;
+        src: local('Circe'),
+        url('{% static 'fonts/circe.ttf' %}') format("truetype");
+    }
+    @font-face {
+        font-family: Circe-Bold;
+        src: local('Circe Bold'),
+        url('{% static 'fonts/circe-bold.ttf' %}') format("truetype");
+    }
+    </style>
+    <script>setTimeout(function() { $('.box').fadeOut('fast') } ,3000);</script>
+</head>
+<body>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

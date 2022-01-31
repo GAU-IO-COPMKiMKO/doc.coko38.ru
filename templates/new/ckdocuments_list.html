@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<table class="table_res_spec">
+    <tr>
+      <th width="11%">ID</th>
+      <th width="11%">Наименование документа</th>
+      <th width="11%">Ссылка на файл</th>
+      <th width="11%">Удалить документ</th>
+    </tr>
+    {% for doc in ckdocuments_list %}
+      <tr>
+        <td>{{ doc.id }}</td>
+        <td>{{ doc.description }}</td>
+        <td>{{ doc.link }}</td>
+        <td><a href="/delete/{{ doc.id }}"
+               onclick="return confirm('Вы действительно хотите удалить документ?') ? true : false;">Удалить</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock body %}

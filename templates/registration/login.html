@@ -1,0 +1,25 @@
+{% extends 'registration/base_auth.html' %}
+{% block body %}
+
+<p class="main-title">
+    {% if info is None %}
+    Загрузка файлов в банк документов coko38.ru
+    {% else %}
+    {{ info }}
+    {% endif %}
+</p><br>
+<form method="post" action="/login/">
+  {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td align="right">Логин:</td>
+            <td align="left"><input type="text" name="username"></td>
+        </tr>
+        <tr>
+            <td align="right">Пароль:</td>
+            <td align="left"><input type="password" name="password"></td>
+        </tr>
+    </table>
+    <center><button type="submit">Войти</button></center><br>
+</form>
+{% endblock %}
